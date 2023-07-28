@@ -17,31 +17,37 @@ print(region)
 
 # Create scatter plot with GDP on the x-axis and number of phones on the y-axis
 sns.scatterplot(x=gdp, y=phones)
-
-# Show plot
+plt.xlabel("GDP ($ per capita)")
+plt.ylabel("Phones (per 1000)")
+plt.title("GDP vs. Number of Phones")
 plt.show()
 
 # Change this scatter plot to have percent literate on the y-axis
 sns.scatterplot(x=gdp, y=percent_literate)
-# Show plot
+plt.xlabel("GDP ($ per capita)")
+plt.ylabel("Percent Literate")
+plt.title("GDP vs. Percent Literate")
 plt.show()
 
 # Create count plot with region on the y-axis
 sns.countplot(y=region)
-
-# Show plot
+plt.xlabel("Count")
+plt.ylabel("Region")
+plt.title("Number of Countries in Each Region")
 plt.show()
 
 # Create a count plot with "Spiders" on the x-axis
 sns.countplot(x='Spiders', data=survey)
-
-# Display the plot
+plt.xlabel("Spiders")
+plt.ylabel("Count")
+plt.title("Frequency of Spider Phobia")
 plt.show()
 
 # Create a scatter plot of absences vs. final grade
 sns.scatterplot(x='absences', y='G3', data=student_data, hue='location')
-
-# Show plot
+plt.xlabel("Absences")
+plt.ylabel("Final Grade")
+plt.title("Absences vs. Final Grade with Location")
 plt.show()
 
 # Change the legend order in the scatter plot
@@ -50,8 +56,9 @@ sns.scatterplot(x="absences", y="G3",
                 hue="location", hue_order=[
                     "Rural", "Urban"
                 ])
-
-# Show plot
+plt.xlabel("Absences")
+plt.ylabel("Final Grade")
+plt.title("Absences vs. Final Grade with Location (Legend Order Changed)")
 plt.show()
 
 # Create a dictionary mapping subgroup values to colors
@@ -59,6 +66,7 @@ palette_colors = {"Rural": "green", "Urban": "blue"}
 
 # Create a count plot of school with location subgroups
 sns.countplot(x='school', data=student_data, hue='location', palette=palette_colors)
-
-# Display plot
+plt.xlabel("School")
+plt.ylabel("Count")
+plt.title("Frequency of Schools with Location Subgroups")
 plt.show()
