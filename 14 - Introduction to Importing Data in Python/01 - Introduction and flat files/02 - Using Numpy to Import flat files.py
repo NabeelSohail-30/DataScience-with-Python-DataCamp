@@ -1,25 +1,3 @@
-# Open a file: file
-file = open('moby_dick.txt', mode='r')
-
-# Print it
-print(file.read())
-
-# Check whether file is closed
-print(file.closed)
-
-# Close file
-file.close()
-
-# Check whether file is closed
-print(file.closed)
-
-# Read & print the first 3 lines
-with open('moby_dick.txt') as file:
-    print(file.readline())
-    print(file.readline())
-    print(file.readline())
-
-
 # Import package
 import numpy as np
 
@@ -82,45 +60,3 @@ d = np.recfromcsv(file)
 
 # Print out first three entries of d
 print(d[:3])
-
-# Import pandas as pd
-import pandas as pd
-
-# Assign the filename: file
-file = 'titanic.csv'
-
-# Read the file into a DataFrame: df
-df = pd.read_csv(file)
-
-# View the head of the DataFrame
-print(df.head())
-
-# Assign the filename: file
-file = 'digits.csv'
-
-# Read the first 5 rows of the file into a DataFrame: data
-data = pd.read_csv(file, nrows=5, header=None)
-
-# Build a numpy array from the DataFrame: data_array
-data_array = np.array(data)
-
-# Print the datatype of data_array to the shell
-print(type(data_array))
-
-# Import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-
-# Assign filename: file
-file = 'titanic_corrupt.txt'
-
-# Import file: data
-data = pd.read_csv(file, sep='\t', comment='#', na_values=['Nothing'])
-
-# Print the head of the DataFrame
-print(data.head())
-
-# Plot 'Age' variable in a histogram
-pd.DataFrame.hist(data[['Age']])
-plt.xlabel('Age (years)')
-plt.ylabel('count')
-plt.show()
