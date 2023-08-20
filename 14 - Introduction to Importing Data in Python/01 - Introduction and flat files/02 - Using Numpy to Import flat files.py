@@ -1,62 +1,40 @@
-# Import package
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Assign filename to variable: file
-file = 'digits.csv'
+# Load and display an image from CSV file
+digits_file = 'digits.csv'
+digits = np.loadtxt(digits_file, delimiter=',')
+print("Datatype of digits:", type(digits))
 
-# Load file as array: digits
-digits = np.loadtxt(file, delimiter=',')
-
-# Print datatype of digits
-print(type(digits))
-
-# Select and reshape a row
+# Select and reshape a row from digits array
 im = digits[21, 1:]
 im_sq = np.reshape(im, (28, 28))
 
-# Plot reshaped data (matplotlib.pyplot already loaded as plt)
+# Display the reshaped image using matplotlib
 plt.imshow(im_sq, cmap='Greys', interpolation='nearest')
 plt.show()
 
-# Import numpy
-import numpy as np
+# Load data from a file with a header and specific columns
+header_data_file = 'digits_header.txt'
+data = np.loadtxt(header_data_file, delimiter='\t', skiprows=1, usecols=(0, 2))
+print("Loaded data:", data)
 
-# Assign the filename: file
-file = 'digits_header.txt'
+# Load and process string data from a file
+seaslug_file = 'seaslug.txt'
+data_str = np.loadtxt(seaslug_file, delimiter='\t', dtype=str)
+print("First element of data_str:", data_str[0])
 
-# Load the data: data
-data = np.loadtxt(file, delimiter='\t', skiprows=1, usecols={0,2})
+# Load and process numeric data from the same file
+data_float = np.loadtxt(seaslug_file, delimiter='\t', dtype='float', skiprows=1)
+print("10th element of data_float:", data_float[9])
 
-# Print data
-print(data)
-
-# Assign filename: file
-file = 'seaslug.txt'
-
-# Import file: data
-data = np.loadtxt(file, delimiter='\t', dtype=str)
-
-# Print the first element of data
-print(data[0])
-
-# Import data as floats and skip the first row: data_float
-data_float = np.loadtxt(file, delimiter='\t', dtype='float', skiprows=1)
-
-# Print the 10th element of data_float
-print(data_float[9])
-
-# Plot a scatterplot of the data
+# Create a scatterplot using loaded data
 plt.scatter(data_float[:, 0], data_float[:, 1])
 plt.xlabel('time (min.)')
 plt.ylabel('percentage of larvae')
 plt.show()
 
-
-# Assign the filename: file
-file = 'titanic.csv'
-
-# Import file using np.recfromcsv: d
-d = np.recfromcsv(file)
-
-# Print out first three entries of d
-print(d[:3])
+# Load and display structured data from a CSV file
+titanic_file = 'titanic.csv'
+d = np.recfromcsv(titanic_file)
+print("First three entries of d:", d[:3])
