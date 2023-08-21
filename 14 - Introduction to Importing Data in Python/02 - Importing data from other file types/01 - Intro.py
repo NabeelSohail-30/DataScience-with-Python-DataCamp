@@ -47,4 +47,3 @@ df2 = xls.parse(1, usecols={0}, skiprows=[0], names=['Country'])
 
 # Print the head of the DataFrame df2
 print(df2.head())
-
