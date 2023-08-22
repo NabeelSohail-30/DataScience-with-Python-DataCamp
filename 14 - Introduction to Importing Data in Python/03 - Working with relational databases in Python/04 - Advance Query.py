@@ -15,3 +15,18 @@ with engine.connect() as con:
 # Print head of DataFrame df
 print(df.head())
 
+# Execute query and store records in DataFrame: df
+# Define the SQL query
+query = '''
+SELECT *
+FROM PlaylistTrack
+INNER JOIN Track ON PlaylistTrack.TrackId = Track.TrackId
+WHERE Track.Milliseconds < 250000
+'''
+
+# Use read_sql_query() to execute the query and store results in DataFrame df
+df = pd.read_sql_query(query, engine)
+
+# Print head of DataFrame
+print(df.head())
+
