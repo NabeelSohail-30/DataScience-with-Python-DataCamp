@@ -1,62 +1,60 @@
-# Import packages
+# Import necessary packages
 from sqlalchemy import create_engine
 import pandas as pd
 
-# Create engine: engine
+# Create an engine: engine
 engine = create_engine('sqlite:///Chinook.sqlite')
 
-# Open engine connection: con
-con = engine.connect()
+# Open engine connection using context manager: con
+with engine.connect() as con:
+    # Execute SQL query and store results in rs
+    rs = con.execute('SELECT * FROM Album')
 
-# Perform query: rs
-rs = con.execute('SELECT * FROM Album')
+    # Convert the query results to a DataFrame: df
+    df = pd.DataFrame(rs.fetchall())
 
-# Save results of the query to DataFrame: df
-df = pd.DataFrame(rs)
-
-# Close connection
-con.close()
-
-# Print head of DataFrame df
+# Print the first few rows of the DataFrame df
 print(df.head())
 
-
-# Open engine in context manager
-# Perform query and save results to DataFrame: df
+# Open engine connection using context manager and fetch only a few rows
 with engine.connect() as con:
+    # Execute SQL query and store results in rs
     rs = con.execute('SELECT LastName, Title FROM Employee')
+
+    # Fetch a limited number of rows and store in df
     df = pd.DataFrame(rs.fetchmany(3))
+
+    # Set column names using the keys of the result set
     df.columns = rs.keys()
 
-# Print the length of the DataFrame df
+# Print the length and the first few rows of the DataFrame df
 print(len(df))
-
-# Print the head of the DataFrame df
 print(df.head())
 
-# Create engine: engine
-engine = create_engine('sqlite:///Chinook.sqlite')
-
-# Open engine in context manager
-# Perform query and save results to DataFrame: df
+# Open engine connection using context manager and filter rows
 with engine.connect() as con:
+    # Execute SQL query and store results in rs
     rs = con.execute('SELECT * FROM Employee WHERE EmployeeId >= 6')
+
+    # Fetch all rows and store in df
     df = pd.DataFrame(rs.fetchall())
+
+    # Set column names using the keys of the result set
     df.columns = rs.keys()
 
-# Print the head of the DataFrame df
+# Print the first few rows of the DataFrame df
 print(df.head())
 
-# Create engine: engine
-engine = create_engine('sqlite:///Chinook.sqlite')
-
-# Open engine in context manager
+# Open engine connection using context manager, order rows and fetch all
 with engine.connect() as con:
+    # Execute SQL query and store results in rs
     rs = con.execute('SELECT * FROM Employee ORDER BY BirthDate')
+
+    # Fetch all rows and store in df
     df = pd.DataFrame(rs.fetchall())
 
-    # Set the DataFrame's column names
+    # Set column names using the keys of the result set
     df.columns = rs.keys()
 
-# Print head of DataFrame
+# Print the first few rows of the DataFrame df
 print(df.head())
