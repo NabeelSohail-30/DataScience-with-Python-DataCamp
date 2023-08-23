@@ -1,3 +1,7 @@
+import pandas as pd
+
+ride_sharing = pd.read_csv('../datasets/ride_sharing_new.csv')
+
 # Find duplicates
 duplicates = ride_sharing.duplicated(subset = 'ride_id', keep = False)
 
