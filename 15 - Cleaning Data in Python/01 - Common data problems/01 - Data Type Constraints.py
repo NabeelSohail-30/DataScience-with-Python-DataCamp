@@ -1,3 +1,7 @@
+import pandas as pd
+
+ride_sharing = pd.read_csv('../datasets/ride_sharing_new.csv')
+
 # Print the information about the DataFrame
 print("DataFrame information:")
 print(ride_sharing.info())
