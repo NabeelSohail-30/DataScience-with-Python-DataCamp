@@ -1,27 +1,26 @@
-# Replace "Dr." with empty string ""
-airlines['full_name'] = airlines['full_name'].str.replace("Dr.","")
+# Import necessary packages
+import pandas as pd
 
-# Replace "Mr." with empty string ""
-airlines['full_name'] = airlines['full_name'].str.replace("Mr.","")
+# Load the airlines dataset
+airlines = pd.read_csv('../datasets/airlines_final.csv')
 
-# Replace "Miss" with empty string ""
-airlines['full_name'] = airlines['full_name'].str.replace("Miss","")
+# Remove honorifics from the 'full_name' column
+honorifics = ["Dr.", "Mr.", "Miss", "Ms."]
+for honorific in honorifics:
+    airlines['full_name'] = airlines['full_name'].str.replace(honorific, "")
 
-# Replace "Ms." with empty string ""
-airlines['full_name'] = airlines['full_name'].str.replace("Ms.","")
+# Assert that 'full_name' has no remaining honorifics
+assert not airlines['full_name'].str.contains('|'.join(honorifics)).any()
 
-# Assert that full_name has no honorifics
-assert airlines['full_name'].str.contains('Ms.|Mr.|Miss|Dr.').any() == False
-
-
-# Store length of each row in survey_response column
+# Calculate the length of each row in the 'survey_response' column
 resp_length = airlines['survey_response'].str.len()
 
-# Find rows in airlines where resp_length > 40
+# Select rows where response length is greater than 40 characters
 airlines_survey = airlines[resp_length > 40]
 
-# Assert minimum survey_response length is > 40
+# Assert that the minimum 'survey_response' length is greater than 40
 assert airlines_survey['survey_response'].str.len().min() > 40
 
-# Print new survey_response column
+# Print the 'survey_response' column for the selected rows
+print("Selected 'survey_response' column:")
 print(airlines_survey['survey_response'])
