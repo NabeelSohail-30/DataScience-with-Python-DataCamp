@@ -9,3 +9,6 @@ banking.loc[acct_eu, 'acct_cur'] = 'dollar'
 
 # Assert that only dollar currency remains
 assert banking['acct_cur'].unique() == 'dollar'
+
+# Print the header of account_opened
+print(banking['account_opened'].head())
