@@ -1,3 +1,7 @@
+import pandas as pd
+
+banking = pd.read_csv('../datasets/banking_dirty.csv')
+
 # Find values of acct_cur that are equal to 'euro'
 acct_eu = banking['acct_cur'] == 'euro'
 
