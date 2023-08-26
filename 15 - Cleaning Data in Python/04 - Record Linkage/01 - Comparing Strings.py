@@ -13,3 +13,5 @@ print(process.extract('american', unique_types, limit = len(unique_types)))
 # Calculate similarity of 'italian' to all values of unique_types
 print(process.extract('italian', unique_types, limit = len(unique_types)))
 
+# Inspect the unique values of the cuisine_type column
+print(restaurants['cuisine_type'].unique())
