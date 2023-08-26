@@ -3,7 +3,7 @@ from thefuzz import process
 import pandas as pd
 
 # Load the restaurants dataset
-restaurants = pd.read_csv('../datasets/restaurants_L2_dirty.csv')
+restaurants = pd.read_csv('../datasets/restaurants_L2.csv')
 
 # Store the unique values of cuisine_type in unique_types
 unique_types = restaurants['cuisine_type'].unique()
