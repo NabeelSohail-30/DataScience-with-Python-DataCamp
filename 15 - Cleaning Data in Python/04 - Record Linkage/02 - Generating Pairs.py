@@ -1,5 +1,10 @@
 # Import the necessary library
 import recordlinkage
+import pandas as pd
+
+# Load the restaurants dataset
+restaurants = pd.read_csv('../datasets/restaurants_L2.csv')
+restaurants_new = pd.read_csv('../datasets/restaurants_L2_dirty.csv')
 
 # Create an indexer object and find possible pairs based on blocking on cuisine_type
 indexer = recordlinkage.Index()
