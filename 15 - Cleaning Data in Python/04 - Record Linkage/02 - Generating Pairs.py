@@ -6,3 +6,6 @@ indexer.block('cuisine_type')
 
 # Generate pairs
 pairs = indexer.index(restaurants, restaurants_new)
+
+# Create a comparison object
+comp_cl = recordlinkage.Compare()
