@@ -1,3 +1,9 @@
+
+
+# Get potential matches using the comparison criteria and print them
+potential_matches = comp_cl.compute(pairs, restaurants, restaurants_new)
+print(potential_matches)
+
 # Isolate potential matches with a row sum >= 3
 matches = potential_matches[potential_matches.sum(axis=1) >= 3]
 
