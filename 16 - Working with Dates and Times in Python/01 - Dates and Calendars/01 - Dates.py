@@ -5,4 +5,4 @@ from datetime import date
 hurricane_andrew = date(1992, 8, 24)
 
 # Which day of the week is the date?
-print(hurricane_andrew.day)
+print(hurricane_andrew.weekday())
