@@ -8,3 +8,12 @@ us = "Our earliest hurricane date: " + first_date.strftime("%m/%d/%Y")
 
 print("ISO: " + iso)
 print("US: " + us)
+
+# Import date
+from datetime import date
+
+# Create a date object
+andrew = date(1992, 8, 26)
+
+# Print the date in the format 'YYYY-MM'
+print(andrew.strftime('%Y-%m'))
