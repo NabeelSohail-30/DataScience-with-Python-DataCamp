@@ -1,37 +1,23 @@
-
-# Assign the earliest date to first_date
-first_date = min(florida_hurricane_dates)
-
-# Convert to ISO and US formats
-iso = "Our earliest hurricane date: " + first_date.isoformat()
-us = "Our earliest hurricane date: " + first_date.strftime("%m/%d/%Y")
-
-print("ISO: " + iso)
-print("US: " + us)
-
-# Import date
 from datetime import date
 
-# Create a date object
+# Get the earliest hurricane date from the list
+first_date = min(florida_hurricane_dates)
+
+# Convert the earliest date to ISO and US formats
+iso_format = first_date.isoformat()
+us_format = first_date.strftime("%m/%d/%Y")
+
+print("ISO format:", iso_format)
+print("US format:", us_format)
+
+# Define a date object
 andrew = date(1992, 8, 26)
 
 # Print the date in the format 'YYYY-MM'
-print(andrew.strftime('%Y-%m'))
-
-# Import date
-from datetime import date
-
-# Create a date object
-andrew = date(1992, 8, 26)
+print("Formatted as 'YYYY-MM':", andrew.strftime('%Y-%m'))
 
 # Print the date in the format 'MONTH (YYYY)'
-print(andrew.strftime('%B (%Y)'))
-
-# Import date
-from datetime import date
-
-# Create a date object
-andrew = date(1992, 8, 26)
+print("Formatted as 'MONTH (YYYY)':", andrew.strftime('%B (%Y)'))
 
 # Print the date in the format 'YYYY-DDD'
-print(andrew.strftime('%Y-%j'))
+print("Formatted as 'YYYY-DDD':", andrew.strftime('%Y-%j'))
