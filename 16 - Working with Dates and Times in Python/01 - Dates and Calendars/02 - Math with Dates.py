@@ -1,39 +1,41 @@
-# Import date
-from datetime import date
+from datetime import date, timedelta
+import pickle
 
-# Create a date object for May 9th, 2007
+from numpy.random.mtrand import random
+
+# Create date objects for May 9th, 2007 and December 13th, 2007
 start = date(2007, 5, 9)
-
-# Create a date object for December 13th, 2007
 end = date(2007, 12, 13)
 
-# Subtract the two dates and print the number of days
-print((end - start).days)
+# Calculate the difference between the two dates and print the number of days
+days_difference = (end - start).days
+print("Number of days between start and end:", days_difference)
 
-# A dictionary to count hurricanes per calendar month
-hurricanes_each_month = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,
-                         7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0}
+# Initialize a dictionary to count hurricanes per calendar month
+hurricanes_each_month = {month: 0 for month in range(1, 13)}
 
-# Loop over all hurricanes
+# Load the data from the pickle file (provide the correct file path)
+with open('../data/florida_hurricane_dates.pkl', 'rb') as file:
+    florida_hurricane_dates = pickle.load(file)
+
+# Loop over hurricane dates and count hurricanes for each month
 for hurricane in florida_hurricane_dates:
-    # Pull out the month
     month = hurricane.month
-    # Increment the count in your dictionary by one
     hurricanes_each_month[month] += 1
 
-print(hurricanes_each_month)
+print("Number of hurricanes each month:", hurricanes_each_month)
 
-# Print the first and last scrambled dates
-print(dates_scrambled[0])
-print(dates_scrambled[-1])
+# Generate a list of dates within the specified range
+dates_scrambled = [start + timedelta(days=i) for i in range((end - start).days + 1)]
 
-# Print the first and last scrambled dates
-print(dates_scrambled[0])
-print(dates_scrambled[-1])
+# Shuffle the list of dates to create a scrambled order
+random.shuffle(dates_scrambled)
 
-# Put the dates in order
+# Print the first and last dates from the scrambled list
+print("First scrambled date:", dates_scrambled[0])
+print("Last scrambled date:", dates_scrambled[-1])
+
+# Sort the scrambled dates list and print the first and last dates
 dates_ordered = sorted(dates_scrambled)
-
-# Print the first and last ordered dates
-print(dates_ordered[0])
-print(dates_ordered[-1])
+print("First ordered date:", dates_ordered[0])
+print("Last ordered date:", dates_ordered[-1])
