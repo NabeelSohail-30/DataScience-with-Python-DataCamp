@@ -1,3 +1,3 @@
 # Import date from datetime
-from date import datetime
+from datetime import date
 
