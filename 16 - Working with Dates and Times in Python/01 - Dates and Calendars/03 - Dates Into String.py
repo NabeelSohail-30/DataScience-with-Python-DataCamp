@@ -1,4 +1,9 @@
 from datetime import date
+import pickle
+
+# Load the data from the pickle file (provide the correct file path)
+with open('../data/florida_hurricane_dates.pkl', 'rb') as file:
+    florida_hurricane_dates = pickle.load(file)
 
 # Get the earliest hurricane date from the list
 first_date = min(florida_hurricane_dates)
