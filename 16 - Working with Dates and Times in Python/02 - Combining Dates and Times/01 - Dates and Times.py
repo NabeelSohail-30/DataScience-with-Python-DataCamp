@@ -1,5 +1,8 @@
 # Import datetime
 from datetime import datetime
+import pandas as pd
+
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
 
 # Create a datetime object
 dt = datetime(2017, 10, 1, 15, 26, 26)
