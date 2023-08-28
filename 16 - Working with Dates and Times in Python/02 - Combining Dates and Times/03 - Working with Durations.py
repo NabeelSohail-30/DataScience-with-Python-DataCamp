@@ -19,3 +19,11 @@ number_of_trips = len(onebike_durations)
 
 # Divide the total duration by the number of trips
 print(total_elapsed_time / number_of_trips)
+
+# Calculate shortest and longest trips
+shortest_trip = min(onebike_durations)
+longest_trip = max(onebike_durations)
+
+# Print out the results
+print("The shortest trip was " + str(shortest_trip) + " seconds")
+print("The longest trip was " + str(longest_trip) + " seconds")
