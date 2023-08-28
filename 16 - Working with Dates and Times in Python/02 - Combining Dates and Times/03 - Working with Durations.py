@@ -1,3 +1,8 @@
+from datetime import datetime
+import pandas as pd
+
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
+
 # Initialize a list for all the trip durations
 onebike_durations = []
 

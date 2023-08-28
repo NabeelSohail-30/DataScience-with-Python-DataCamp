@@ -1,5 +1,9 @@
 # Import the datetime class
 from datetime import datetime
+from datetime import datetime
+import pandas as pd
+
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
 
 # Starting string, in YYYY-MM-DD HH:MM:SS format
 s = '2017-02-03 00:00:01'
