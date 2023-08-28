@@ -1,8 +1,8 @@
 # Import the datetime class
 from datetime import datetime
-from datetime import datetime
 import pandas as pd
 
+# Load the data into a DataFrame
 onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
 
 # Starting string, in YYYY-MM-DD HH:MM:SS format
@@ -17,9 +17,6 @@ d = datetime.strptime(s, fmt)
 # Print d
 print(d)
 
-# Import the datetime class
-from datetime import datetime
-
 # Starting string, in YYYY-MM-DD format
 s = '2030-10-15'
 
@@ -31,9 +28,6 @@ d = datetime.strptime(s, fmt)
 
 # Print d
 print(d)
-
-# Import the datetime class
-from datetime import datetime
 
 # Starting string, in MM/DD/YYYY HH:MM:SS format
 s = '12/15/1986 08:00:00'
@@ -53,7 +47,7 @@ fmt = "%Y-%m-%d %H:%M:%S"
 # Initialize a list for holding the pairs of datetime objects
 onebike_datetimes = []
 
-# Loop over all trips
+# Loop over all trips (assuming you have onebike_datetime_strings defined)
 for (start, end) in onebike_datetime_strings:
     trip = {'start': datetime.strptime(start, fmt),
             'end': datetime.strptime(end, fmt)}
@@ -84,7 +78,7 @@ timestamps = [1514665153, 1514664543]
 # Datetime objects
 dts = []
 
-# Loop
+# Loop through the timestamps and convert to datetime objects
 for ts in timestamps:
     dts.append(datetime.fromtimestamp(ts))
 
