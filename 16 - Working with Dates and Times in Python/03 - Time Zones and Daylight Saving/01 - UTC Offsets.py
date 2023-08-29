@@ -1,5 +1,8 @@
 # Import datetime, timezone
 from datetime import datetime, timezone
+import pandas as pd
+
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
 
 # October 1, 2017 at 15:26:26, UTC
 dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=timezone.utc)
