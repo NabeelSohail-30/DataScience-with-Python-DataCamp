@@ -1,24 +1,24 @@
-# Loop over trips
+from dateutil import tz
+import pandas as pd
+
+# Load the data into a DataFrame
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
+
+# Check for ambiguous start or end times
 for trip in onebike_datetimes:
-  # Rides with ambiguous start
-  if tz.datetime_ambiguous(trip['start']):
-    print("Ambiguous start at " + str(trip['start']))
-  # Rides with ambiguous end
-  if tz.datetime_ambiguous(trip['end']):
-    print("Ambiguous end at " + str(trip['end']))
+    if tz.datetime_ambiguous(trip['start']):
+        print("Ambiguous start at", trip['start'])
+    if tz.datetime_ambiguous(trip['end']):
+        print("Ambiguous end at", trip['end'])
 
 trip_durations = []
 for trip in onebike_datetimes:
-  # When the start is later than the end, set the fold to be 1
-  if trip['start'] > trip['end']:
-    trip['end'] = tz.enfold(trip['end'])
-  # Convert to UTC
-  start = trip['start'].astimezone(tz.UTC)
-  end = trip['end'].astimezone(tz.UTC)
+    start, end = trip['start'], trip['end']
+    if start > end:
+        end = tz.enfold(end)
+    start_utc, end_utc = start.astimezone(tz.UTC), end.astimezone(tz.UTC)
+    trip_durations.append((end_utc - start_utc).total_seconds())
 
-  # Subtract the difference
-  trip_length_seconds = (end-start).total_seconds()
-  trip_durations.append(trip_length_seconds)
-
-# Take the shortest trip duration
-print("Shortest trip: " + str(min(trip_durations)))
+# Find the shortest trip duration
+shortest_duration = min(trip_durations)
+print("Shortest trip:", shortest_duration)
