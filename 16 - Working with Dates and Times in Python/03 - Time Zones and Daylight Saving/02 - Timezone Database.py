@@ -11,3 +11,16 @@ for trip in onebike_datetimes[:10]:
   trip['end'] = trip['end'].replace(tzinfo=et)
 
 
+# Create the timezone object
+uk = tz.gettz('Europe/London')
+
+# Pull out the start of the first trip
+local = onebike_datetimes[0]['start']
+
+# What time was it in the UK?
+notlocal = local.astimezone(uk)
+
+# Print them out and see the difference
+print(local.isoformat())
+print(notlocal.isoformat())
+
