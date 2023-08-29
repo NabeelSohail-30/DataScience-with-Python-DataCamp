@@ -1,5 +1,9 @@
 # Import tz
 from dateutil import tz
+from datetime import datetime, timezone, timedelta
+import pandas as pd
+
+onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
 
 # Create a timezone object for Eastern Time
 et = tz.gettz('America/New_York')
