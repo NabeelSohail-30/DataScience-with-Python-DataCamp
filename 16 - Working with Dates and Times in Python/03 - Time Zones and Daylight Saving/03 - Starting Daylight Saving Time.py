@@ -1,48 +1,28 @@
-# Import datetime, timedelta, tz, timezone
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from dateutil import tz
 
-# Start on March 12, 2017, midnight, then add 6 hours
-start = datetime(2017, 3, 12, tzinfo = tz.gettz('America/New_York'))
+# Define time zones
+ny_tz = tz.gettz('America/New_York')
+utc_tz = tz.gettz('UTC')
+
+# Define starting date in New York timezone
+start = datetime(2017, 3, 12, tzinfo=ny_tz)
+
+# Calculate end time by adding 6 hours
 end = start + timedelta(hours=6)
-print(start.isoformat() + " to " + end.isoformat())
 
-# Import datetime, timedelta, tz, timezone
-from datetime import datetime, timedelta, timezone
-from dateutil import tz
+# Print time range and elapsed hours
+print(f"Time range: {start.isoformat()} to {end.isoformat()}")
+print(f"Elapsed hours: {(end - start).total_seconds() / (60 * 60)}")
 
-# Start on March 12, 2017, midnight, then add 6 hours
-start = datetime(2017, 3, 12, tzinfo = tz.gettz('America/New_York'))
-end = start + timedelta(hours=6)
-print(start.isoformat() + " to " + end.isoformat())
-
-# How many hours have elapsed?
-print((end - start).total_seconds()/(60*60))
-
-# Import datetime, timedelta, tz, timezone
-from datetime import datetime, timedelta, timezone
-from dateutil import tz
-
-# Start on March 12, 2017, midnight, then add 6 hours
-start = datetime(2017, 3, 12, tzinfo = tz.gettz('America/New_York'))
-end = start + timedelta(hours=6)
-print(start.isoformat() + " to " + end.isoformat())
-
-# How many hours have elapsed?
-print((end - start).total_seconds()/(60*60))
-
-# What if we move to UTC?
-print((end.astimezone(timezone.utc) - start.astimezone(timezone.utc))\
-      .total_seconds()/(60*60))
-
-# Import datetime and tz
-from datetime import datetime
-from dateutil import tz
+# Calculate elapsed hours in UTC
+elapsed_hours_utc = (end.astimezone(utc_tz) - start.astimezone(utc_tz)).total_seconds() / (60 * 60)
+print(f"Elapsed hours in UTC: {elapsed_hours_utc:.2f}")
 
 # Create starting date
-dt = datetime(2000, 3, 29, tzinfo = tz.gettz('Europe/London'))
+start_date = datetime(2000, 3, 29, tzinfo=tz.gettz('Europe/London'))
 
-# Loop over the dates, replacing the year, and print the ISO timestamp
-for y in range(2000, 2011):
-  print(dt.replace(year=y).isoformat())
-
+# Generate ISO timestamps for multiple years
+for year in range(2000, 2011):
+    new_date = start_date.replace(year=year)
+    print(new_date.isoformat())
