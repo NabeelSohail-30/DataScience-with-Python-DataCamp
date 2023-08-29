@@ -1,5 +1,5 @@
 # Import datetime, timezone
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import pandas as pd
 
 onebike_datetimes = pd.read_csv('../data/capital-onebike.csv')
@@ -10,9 +10,6 @@ dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=timezone.utc)
 # Print results
 print(dt.isoformat())
 
-# Import datetime, timedelta, timezone
-from datetime import datetime, timedelta, timezone
-
 # Create a timezone for Pacific Standard Time, or UTC-8
 pst = timezone(timedelta(hours=-8))
 
@@ -21,9 +18,6 @@ dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=pst)
 
 # Print results
 print(dt.isoformat())
-
-# Import datetime, timedelta, timezone
-from datetime import datetime, timedelta, timezone
 
 # Create a timezone for Australian Eastern Daylight Time, or UTC+11
 aedt = timezone(timedelta(hours=11))
@@ -52,4 +46,3 @@ for trip in onebike_datetimes[:10]:
 
     # Print the start time in UTC
     print('Original:', trip['start'], '| UTC:', dt.isoformat())
-
