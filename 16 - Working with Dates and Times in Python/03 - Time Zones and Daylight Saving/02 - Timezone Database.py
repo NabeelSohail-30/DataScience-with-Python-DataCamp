@@ -24,3 +24,15 @@ notlocal = local.astimezone(uk)
 print(local.isoformat())
 print(notlocal.isoformat())
 
+# Create the timezone object
+ist = tz.gettz('Asia/Kolkata')
+
+# Pull out the start of the first trip
+local = onebike_datetimes[0]['start']
+
+# What time was it in India?
+notlocal = local.astimezone(ist)
+
+# Print them out and see the difference
+print(local.isoformat())
+print(notlocal.isoformat())
