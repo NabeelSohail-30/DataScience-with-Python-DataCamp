@@ -39,3 +39,10 @@ monthly_rides = rides.resample('M', on='Start date')['Member type']
 
 # Take the ratio of the .value_counts() over the total number of rides
 print(monthly_rides.value_counts() / monthly_rides.size())
+
+# Group rides by member type, and resample to the month
+grouped = rides.groupby('Member type')\
+  .resample('M', on='Start date')
+
+# Print the median duration for each group
+print(grouped['Duration'].median())
