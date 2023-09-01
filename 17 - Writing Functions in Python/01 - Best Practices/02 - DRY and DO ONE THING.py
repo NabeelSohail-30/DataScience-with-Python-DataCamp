@@ -16,3 +16,19 @@ df['y1_z'] = standardize(df.y1_gpa)
 df['y2_z'] = standardize(df.y2_gpa)
 df['y3_z'] = standardize(df.y3_gpa)
 df['y4_z'] = standardize(df.y4_gpa)
+
+
+def mean(values):
+  """Get the mean of a sorted list of values
+
+  Args:
+    values (iterable of float): A list of numbers
+
+  Returns:
+    float
+  """
+  # Write the mean() function
+  mean = sum(values) / len(values)
+  return mean
+
+
