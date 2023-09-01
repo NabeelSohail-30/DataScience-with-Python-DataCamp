@@ -32,3 +32,19 @@ def mean(values):
   return mean
 
 
+def median(values):
+  """Get the median of a sorted list of values
+
+  Args:
+    values (iterable of float): A list of numbers
+
+  Returns:
+    float
+  """
+  # Write the median() function
+  n = len(values)
+  if n % 2 == 0:
+    median = (values[n // 2 - 1] + values[n // 2]) / 2
+  else:
+    median = values[n // 2]
+  return median
