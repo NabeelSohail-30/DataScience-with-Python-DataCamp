@@ -61,3 +61,17 @@ def count_letter(content, letter):
   if (not isinstance(letter, str)) or len(letter) != 1:
     raise ValueError('`letter` must be a single character string.')
   return len([char for char in content if char == letter])
+
+
+docstring = count_letter.__doc__
+
+border = '#' * 28
+print('{}\n{}\n{}'.format(border, docstring, border))
+
+import inspect
+
+# Inspect the count_letter() function to get its docstring
+docstring = inspect.getdoc(count_letter)
+
+border = '#' * 28
+print('{}\n{}\n{}'.format(border, docstring, border))
