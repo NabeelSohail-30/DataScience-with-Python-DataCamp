@@ -1,17 +1,18 @@
 # Add a decorator that will make timer() a context manager
-@contextlib.contextmanager()
+@contextlib.contextmanager
 def timer():
-  """Time the execution of a context block.
+    """Time the execution of a context block.
 
-  Yields:
-    None
-  """
-  start = time.time()
-  # Send control back to the context block
-  with timer():
-  end = time.time()
-  print('Elapsed: {:.2f}s'.format(end - start))
+    Yields:
+      None
+    """
+    start = time.time()
+    # Send control back to the context block
+    yield
+    end = time.time()
+    print('Elapsed: {:.2f}s'.format(end - start))
+
 
 with timer():
-  print('This should take approximately 0.25 seconds')
-  time.sleep(0.25)
+    print('This should take approximately 0.25 seconds')
+    time.sleep(0.25)
