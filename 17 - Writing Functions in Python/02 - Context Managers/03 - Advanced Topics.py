@@ -7,3 +7,22 @@ with stock('NVDA') as nvda:
             value = nvda.price()
             print('Logging ${:.2f} for NVDA'.format(value))
             f_out.write('{:.2f}\n'.format(value))
+
+
+def in_dir(directory):
+    """Change current working directory to `directory`,
+    allow the user to run some code, and change back.
+
+    Args:
+      directory (str): The path to a directory to work in.
+    """
+    current_dir = os.getcwd()
+    os.chdir(directory)
+
+    # Add code that lets you handle errors
+    try:
+        yield
+    # Ensure the directory is reset,
+    # whether there was an error or not
+    finally:
+        os.chdir(current_dir)
