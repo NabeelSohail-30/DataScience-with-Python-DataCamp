@@ -1,3 +1,6 @@
+import inspect
+
+
 # Add a docstring to count_letter()
 def count_letter(content, letter):
     """
@@ -68,15 +71,11 @@ docstring = count_letter.__doc__
 border = '#' * 28
 print('{}\n{}\n{}'.format(border, docstring, border))
 
-import inspect
-
 # Inspect the count_letter() function to get its docstring
 docstring = inspect.getdoc(count_letter)
 
 border = '#' * 28
 print('{}\n{}\n{}'.format(border, docstring, border))
-
-import inspect
 
 
 def build_tooltip(function):
