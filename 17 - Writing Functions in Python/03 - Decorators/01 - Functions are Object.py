@@ -28,3 +28,12 @@ else:
   print("load_and_plot_data() looks ok")
 
 
+# Call has_docstring() on the as_2D() function
+ok = has_docstring(as_2D)
+
+if not ok:
+  print("as_2D() doesn't have a docstring!")
+else:
+  print("as_2D() looks ok")
+
+
