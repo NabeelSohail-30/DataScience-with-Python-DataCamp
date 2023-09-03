@@ -1,4 +1,8 @@
 # Add a decorator that will make timer() a context manager
+import contextlib
+import time
+
+
 @contextlib.contextmanager
 def timer():
     """Time the execution of a context block.
