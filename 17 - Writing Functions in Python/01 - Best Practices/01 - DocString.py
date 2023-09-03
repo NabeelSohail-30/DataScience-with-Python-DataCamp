@@ -45,7 +45,7 @@ def count_letter3(content, letter):
     return len([char for char in content if char == letter])
 
 
-def count_letter(content, letter):
+def count_letter4(content, letter):
     """Count the number of times `letter` appears in `content`.
 
   Args:
