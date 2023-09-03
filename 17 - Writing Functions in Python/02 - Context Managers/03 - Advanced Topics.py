@@ -1,5 +1,12 @@
 # Use the "stock('NVDA')" context manager
 # and assign the result to the variable "nvda"
+import os
+
+
+def stock(param):
+    pass
+
+
 with stock('NVDA') as nvda:
     # Open 'NVDA.txt' for writing as f_out
     with open('NVDA.txt', 'w') as f_out:
