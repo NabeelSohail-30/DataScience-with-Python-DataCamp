@@ -20,7 +20,7 @@ df['y4_z'] = standardize(df.y4_gpa)
 
 
 def mean(values):
-    """Get the mean of a sorted list of values
+    """Get the meanVar of a sorted list of values
 
   Args:
     values (iterable of float): A list of numbers
@@ -28,9 +28,9 @@ def mean(values):
   Returns:
     float
   """
-    # Write the mean() function
-    mean = sum(values) / len(values)
-    return mean
+    # Write the meanVar() function
+    meanVar = sum(values) / len(values)
+    return meanVar
 
 
 def median(values):
