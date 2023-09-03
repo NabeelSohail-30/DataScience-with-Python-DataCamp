@@ -17,3 +17,14 @@ if func_name in function_map:
     function_map[func_name](data)
 else:
     print("Invalid function name")
+
+
+# Call has_docstring() on the load_and_plot_data() function
+ok = has_docstring(load_and_plot_data)
+
+if not ok:
+  print("load_and_plot_data() doesn't have a docstring!")
+else:
+  print("load_and_plot_data() looks ok")
+
+
