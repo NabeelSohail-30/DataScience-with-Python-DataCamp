@@ -1,4 +1,8 @@
 # Add the missing function references to the function map
+from zoneinfo._common import load_data
+
+from numpy import mean, std, minimum, maximum
+
 function_map = {
   'mean': mean,
   'std': std,
