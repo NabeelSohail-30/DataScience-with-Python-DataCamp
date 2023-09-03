@@ -1,5 +1,5 @@
 def standardize(column):
-  """Standardize the values in a column.
+    """Standardize the values in a column.
 
   Args:
     column (pandas Series): The data to standardize.
@@ -7,9 +7,10 @@ def standardize(column):
   Returns:
     pandas Series: the values as z-scores
   """
-  # Finish the function so that it returns the z-scores
-  z_score = (column - column.mean()) / column.std()
-  return z_score
+    # Finish the function so that it returns the z-scores
+    z_score = (column - column.mean()) / column.std()
+    return z_score
+
 
 # Use the standardize() function to calculate the z-scores
 df['y1_z'] = standardize(df.y1_gpa)
@@ -19,7 +20,7 @@ df['y4_z'] = standardize(df.y4_gpa)
 
 
 def mean(values):
-  """Get the mean of a sorted list of values
+    """Get the mean of a sorted list of values
 
   Args:
     values (iterable of float): A list of numbers
@@ -27,13 +28,13 @@ def mean(values):
   Returns:
     float
   """
-  # Write the mean() function
-  mean = sum(values) / len(values)
-  return mean
+    # Write the mean() function
+    mean = sum(values) / len(values)
+    return mean
 
 
 def median(values):
-  """Get the median of a sorted list of values
+    """Get the median of a sorted list of values
 
   Args:
     values (iterable of float): A list of numbers
@@ -41,10 +42,10 @@ def median(values):
   Returns:
     float
   """
-  # Write the median() function
-  n = len(values)
-  if n % 2 == 0:
-    median = (values[n // 2 - 1] + values[n // 2]) / 2
-  else:
-    median = values[n // 2]
-  return median
+    # Write the median() function
+    n = len(values)
+    if n % 2 == 0:
+        median = (values[n // 2 - 1] + values[n // 2]) / 2
+    else:
+        median = values[n // 2]
+    return median
