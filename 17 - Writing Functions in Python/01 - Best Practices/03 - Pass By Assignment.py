@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas
 
 def better_add_column(values, df=None):
   """Add a column of `values` to a DataFrame `df`.
