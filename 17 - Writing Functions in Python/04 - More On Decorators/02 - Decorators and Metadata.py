@@ -139,3 +139,17 @@ print_sum(4, 100)
 print = run_n_times(20)(print)
 
 print('What is happening?!?!')
+
+
+def html(open_tag, close_tag):
+  def decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+      msg = func(*args, **kwargs)
+      return '{}{}{}'.format(open_tag, msg, close_tag)
+    # Return the decorated function
+    return wrapper
+  # Return the decorator
+  return decorator
+
+
