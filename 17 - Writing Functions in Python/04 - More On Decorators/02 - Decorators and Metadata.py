@@ -124,3 +124,13 @@ def print_sum(a, b):
 
 print_sum(15, 20)
 
+# Use run_n_times() to create the run_five_times() decorator
+run_five_times = run_n_times(5)
+
+
+@run_five_times
+def print_sum(a, b):
+    print(a + b)
+
+
+print_sum(4, 100)
