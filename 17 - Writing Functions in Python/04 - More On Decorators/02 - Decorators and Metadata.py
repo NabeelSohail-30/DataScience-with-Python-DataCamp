@@ -175,3 +175,11 @@ def hello(name):
 
 print(hello('Alice'))
 
+
+# Make goodbye() return italicized text
+@html('<div>', '</div?')
+def goodbye(name):
+    return 'Goodbye {}.'.format(name)
+
+
+print(goodbye('Alice'))
