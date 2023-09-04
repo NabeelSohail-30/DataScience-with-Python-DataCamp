@@ -134,3 +134,8 @@ def print_sum(a, b):
 
 
 print_sum(4, 100)
+
+# Modify the print() function to always run 20 times
+print = run_n_times(20)(print)
+
+print('What is happening?!?!')
