@@ -117,9 +117,10 @@ def run_n_times(n):
 
 
 # Make print_sum() run 10 times with the run_n_times() decorator
-@run_n_times()
+@run_n_times(10)
 def print_sum(a, b):
     print(a + b)
 
 
 print_sum(15, 20)
+
