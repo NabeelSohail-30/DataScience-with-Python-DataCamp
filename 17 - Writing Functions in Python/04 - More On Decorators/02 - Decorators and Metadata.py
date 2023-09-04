@@ -104,3 +104,22 @@ undecorated_time = t_end - t_start
 
 print('Decorated time: {:.5f}s'.format(decorated_time))
 print('Undecorated time: {:.5f}s'.format(undecorated_time))
+
+
+def run_n_times(n):
+  """Define and return a decorator"""
+  def decorator(func):
+    def wrapper(*args, **kwargs):
+      for i in range(n):
+        func(*args, **kwargs)
+    return wrapper
+  return decorator
+
+
+# Make print_sum() run 10 times with the run_n_times() decorator
+@run_n_times()
+def print_sum(a, b):
+    print(a + b)
+
+
+print_sum(15, 20)
