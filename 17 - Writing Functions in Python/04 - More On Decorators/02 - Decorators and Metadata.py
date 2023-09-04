@@ -167,3 +167,11 @@ def italics(func):
   return wrapper
 
 
+# Make hello() return bolded text
+@html('<b>', '</b>')
+def hello(name):
+    return 'Hello {}!'.format(name)
+
+
+print(hello('Alice'))
+
