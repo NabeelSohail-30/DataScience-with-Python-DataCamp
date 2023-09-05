@@ -29,3 +29,9 @@ mdl_price_vs_age = ols("price_twd_msq ~ house_age_years", data=taiwan_real_estat
 
 # Print the parameters of the fitted model
 print(mdl_price_vs_age.params)
+
+# Create the model without intercept and fit it
+mdl_price_vs_age0 = ols("price_twd_msq ~ house_age_years - 1", data=taiwan_real_estate).fit()
+
+# Print the parameters of the fitted model
+print(mdl_price_vs_age0.params)
