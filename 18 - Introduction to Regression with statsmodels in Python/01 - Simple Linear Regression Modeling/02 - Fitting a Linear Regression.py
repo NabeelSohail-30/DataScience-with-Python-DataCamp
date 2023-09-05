@@ -8,4 +8,4 @@ mdl_price_vs_conv = ols('price_twd_msq ~ n_convenience', data=taiwan_real_estate
 mdl_price_vs_conv = mdl_price_vs_conv.fit()
 
 # Print the parameters of the fitted model
-print(mdl_price_vs_conv.params)
+print(mdl_price_vs_conv.params) 
