@@ -66,3 +66,5 @@ plt.figure()
 sns.regplot(x="qdrt_n_impressions", y="qdrt_n_clicks", data=ad_conversion, ci=None)
 plt.show()
 
+# Run a linear regression of your transformed variables
+mdl_click_vs_impression = ols("qdrt_n_clicks ~ qdrt_n_impressions", data=ad_conversion).fit()
