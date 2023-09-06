@@ -68,3 +68,11 @@ plt.show()
 
 # Run a linear regression of your transformed variables
 mdl_click_vs_impression = ols("qdrt_n_clicks ~ qdrt_n_impressions", data=ad_conversion).fit()
+
+# Complete prediction_data
+prediction_data = explanatory_data.assign(
+    qdrt_n_clicks = mdl_click_vs_impression.predict(explanatory_data)
+)
+
+# Print the result
+print(prediction_data)
