@@ -76,3 +76,10 @@ prediction_data = explanatory_data.assign(
 
 # Print the result
 print(prediction_data)
+
+
+# Back transform qdrt_n_clicks to get n_clicks
+prediction_data["n_clicks"] = prediction_data["qdrt_n_clicks"] ** 4
+
+# Print prediction_data
+print(prediction_data)
