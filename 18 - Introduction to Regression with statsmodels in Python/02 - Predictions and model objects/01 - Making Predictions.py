@@ -61,3 +61,5 @@ sns.scatterplot(x="n_convenience",
 plt.show()
 
 
+# Define a DataFrame impossible
+impossible = pd.DataFrame({'n_convenience': [-1, 2.5]})
