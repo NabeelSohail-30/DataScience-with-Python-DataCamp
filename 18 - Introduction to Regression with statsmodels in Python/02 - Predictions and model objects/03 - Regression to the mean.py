@@ -15,3 +15,12 @@ plt.axis('equal')
 
 # Show the plot
 plt.show()
+
+
+# Run a linear regression on return_2019 vs. return_2018 using sp500_yearly_returns
+mdl_returns = ols("return_2019 ~ return_2018", data=sp500_yearly_returns).fit()
+
+# Print the parameters
+print(mdl_returns.params)
+
+
