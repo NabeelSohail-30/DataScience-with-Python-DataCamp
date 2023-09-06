@@ -54,3 +54,15 @@ sns.regplot(x="sqrt_dist_to_mrt_m", y="price_twd_msq", data=taiwan_real_estate, 
 # Add a layer of your prediction points
 sns.scatterplot(x="sqrt_dist_to_mrt_m", y="price_twd_msq", data=prediction_data, color="red")
 plt.show()
+
+
+# Create qdrt_n_impressions and qdrt_n_clicks
+ad_conversion["qdrt_n_impressions"] = ad_conversion["n_impressions"] ** 0.25
+ad_conversion["qdrt_n_clicks"] = ad_conversion["n_clicks"] ** 0.25
+
+plt.figure()
+
+# Plot using the transformed variables
+sns.regplot(x="qdrt_n_impressions", y="qdrt_n_clicks", data=ad_conversion, ci=None)
+plt.show()
+
