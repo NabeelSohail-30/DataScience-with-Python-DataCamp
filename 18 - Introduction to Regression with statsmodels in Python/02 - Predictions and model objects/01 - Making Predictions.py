@@ -39,3 +39,25 @@ prediction_data = explanatory_data.assign(
 print(prediction_data)
 
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a new figure, fig
+fig = plt.figure()
+
+# Plot the regression line using regplot
+sns.regplot(x="n_convenience",
+            y="price_twd_msq",
+            data=taiwan_real_estate,
+            ci=None)
+
+# Add a scatter plot layer for the predictions in prediction_data
+sns.scatterplot(x="n_convenience",
+                y="price_twd_msq",
+                data=prediction_data,
+                color="red")
+
+# Show the layered plot
+plt.show()
+
+
