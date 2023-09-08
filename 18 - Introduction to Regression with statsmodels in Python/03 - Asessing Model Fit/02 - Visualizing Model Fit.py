@@ -8,5 +8,16 @@ plt.ylabel("Residuals")
 plt.show()
 
 
+# Import qqplot
+from statsmodels.api import qqplot
+
+# Create the Q-Q plot of the residuals
+qqplot(data=mdl_price_vs_conv.resid, fit=True, line="45")
+
+# Show the plot
+plt.show()
+
+
+
 
 
