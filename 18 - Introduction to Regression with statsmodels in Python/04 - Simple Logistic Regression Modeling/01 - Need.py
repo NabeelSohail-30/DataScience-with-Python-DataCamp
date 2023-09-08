@@ -18,3 +18,17 @@ plt.suptitle(
 
 # Show the plot
 plt.show()
+
+# Create the displot with col parameter to split histograms
+sns.displot(data=churn, x="time_since_first_purchase",
+            hue="has_churned", col="has_churned", bins=20, kde=True)
+
+# Add labels and a title
+plt.xlabel("Time Since First Purchase")
+plt.ylabel("Frequency")
+# Adjust title position
+plt.suptitle(
+    "Distribution of Time Since First Purchase (Churn vs. No Churn)", y=1.02)
+
+# Show the plot
+plt.show()
