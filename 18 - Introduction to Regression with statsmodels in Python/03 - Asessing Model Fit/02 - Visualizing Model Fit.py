@@ -17,7 +17,17 @@ qqplot(data=mdl_price_vs_conv.resid, fit=True, line="45")
 # Show the plot
 plt.show()
 
+# Preprocessing steps
+model_norm_residuals = mdl_price_vs_conv.get_influence().resid_studentized_internal
+model_norm_residuals_abs_sqrt = np.sqrt(np.abs(model_norm_residuals))
 
+# Create the scale-location plot
+sns.regplot(x=mdl_price_vs_conv.fittedvalues, y=model_norm_residuals_abs_sqrt, ci=None, lowess=True)
+plt.xlabel("Fitted values")
+plt.ylabel("Sqrt of abs val of stdized residuals")
+
+# Show the plot
+plt.show()
 
 
 
