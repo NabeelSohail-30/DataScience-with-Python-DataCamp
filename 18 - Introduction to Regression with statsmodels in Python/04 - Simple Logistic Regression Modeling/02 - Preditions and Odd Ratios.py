@@ -75,3 +75,9 @@ plt.ylabel("Odds Ratio")
 plt.title("Odds Ratio vs. Time Since First Purchase")
 
 plt.show()
+
+# Add a log_odds_ratio column derived from odds_ratio
+prediction_data["log_odds_ratio"] = np.log(prediction_data["odds_ratio"])
+
+# Print the first five lines of prediction_data
+print(prediction_data.head())
