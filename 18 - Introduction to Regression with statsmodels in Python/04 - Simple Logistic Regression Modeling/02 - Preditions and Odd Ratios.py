@@ -3,8 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+from statsmodels.formula.api import logit
 
 churn = pd.read_csv('./datasets/churn.csv')
+
+# Fit a logistic regression of churn vs. length of relationship using the churn dataset
+formula = "has_churned ~ time_since_first_purchase"
+mdl_churn_vs_relationship = logit(formula, data=churn).fit()
+
 
 prediction_data = explanatory_data.assign(
     has_churned=mdl_churn_vs_relationship.predict(explanatory_data)

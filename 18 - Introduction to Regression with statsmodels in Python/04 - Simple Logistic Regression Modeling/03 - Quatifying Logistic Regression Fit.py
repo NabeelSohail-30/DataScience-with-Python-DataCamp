@@ -9,6 +9,9 @@ import numpy as np
 # Load the churn dataset
 churn = pd.read_csv('./datasets/churn.csv')
 
+# Fit a logistic regression of churn vs. length of relationship using the churn dataset
+formula = "has_churned ~ time_since_first_purchase"
+mdl_churn_vs_relationship = logit(formula, data=churn).fit()
 
 actual_response = churn["has_churned"]
 
