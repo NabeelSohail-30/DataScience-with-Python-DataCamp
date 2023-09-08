@@ -44,3 +44,15 @@ plt.title("Scatter Plot of Has Churned vs. Time Since First Purchase")
 
 # Show the plot
 plt.show()
+
+# Create a scatter plot with a logistic regression trend line
+sns.regplot(data=churn, x="time_since_first_purchase", y="has_churned",
+            logistic=True, scatter_kws={'s': 10}, line_kws={"color": "blue"})
+
+# Add labels and a title
+plt.xlabel("Time Since First Purchase")
+plt.ylabel("Has Churned")
+plt.title("Scatter Plot of Has Churned vs. Time Since First Purchase")
+
+# Show the plot
+plt.show()
