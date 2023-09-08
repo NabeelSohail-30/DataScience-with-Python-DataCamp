@@ -23,3 +23,27 @@ mosaic(conf_matrix, title='Confusion Matrix')
 
 # Show the mosaic plot
 plt.show()
+
+# Extract TN, TP, FN, and FP from conf_matrix
+TN = conf_matrix[0, 0]
+FP = conf_matrix[0, 1]
+FN = conf_matrix[1, 0]
+TP = conf_matrix[1, 1]
+
+# Calculate the accuracy
+accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+# Calculate the sensitivity (True Positive Rate)
+sensitivity = TP / (TP + FN)
+
+# Calculate the specificity (True Negative Rate)
+specificity = TN / (TN + FP)
+
+# Print the results
+print("True Positives (TP):", TP)
+print("True Negatives (TN):", TN)
+print("False Positives (FP):", FP)
+print("False Negatives (FN):", FN)
+print("Accuracy:", accuracy)
+print("Sensitivity (True Positive Rate):", sensitivity)
+print("Specificity (True Negative Rate):", specificity)
