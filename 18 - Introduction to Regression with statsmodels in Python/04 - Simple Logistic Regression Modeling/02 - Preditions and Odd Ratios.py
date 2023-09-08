@@ -2,6 +2,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
+
+churn = pd.read_csv('./datasets/churn.csv')
+
 prediction_data = explanatory_data.assign(
     has_churned=mdl_churn_vs_relationship.predict(explanatory_data)
 )

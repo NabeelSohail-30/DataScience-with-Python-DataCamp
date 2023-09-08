@@ -1,5 +1,15 @@
 # Get the actual responses
 from statsmodels.graphics.mosaicplot import mosaic
+from statsmodels.formula.api import logit
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Load the churn dataset
+churn = pd.read_csv('./datasets/churn.csv')
+
+
 actual_response = churn["has_churned"]
 
 # Get the predicted responses
