@@ -22,3 +22,10 @@ plt.ylabel("Has Churned")
 plt.title("Scatter Plot of Has Churned vs. Time Since First Purchase")
 
 plt.show()
+
+# Update prediction data by adding most_likely_outcome
+prediction_data["most_likely_outcome"] = np.round(
+    prediction_data["has_churned"])
+
+# Print the head
+print(prediction_data.head())
