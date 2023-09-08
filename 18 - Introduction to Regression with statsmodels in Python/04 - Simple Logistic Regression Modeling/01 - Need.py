@@ -32,3 +32,15 @@ plt.suptitle(
 
 # Show the plot
 plt.show()
+
+# Create a scatter plot with a linear regression trend line
+sns.regplot(data=churn_data, x="time_since_first_purchase",
+            y="has_churned", color="red", scatter_kws={'s': 10})
+
+# Add labels and a title
+plt.xlabel("Time Since First Purchase")
+plt.ylabel("Has Churned")
+plt.title("Scatter Plot of Has Churned vs. Time Since First Purchase")
+
+# Show the plot
+plt.show()
