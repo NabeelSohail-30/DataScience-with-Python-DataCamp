@@ -59,3 +59,19 @@ prediction_data["odds_ratio"] = prediction_data["has_churned"] / \
 
 # Print the head
 print(prediction_data.head())
+
+fig = plt.figure()
+
+# Create a line plot of odds_ratio vs time_since_first_purchase
+sns.lineplot(data=prediction_data,
+             x="time_since_first_purchase", y="odds_ratio")
+
+# Add a dotted horizontal line at odds_ratio = 1
+plt.axhline(y=1, linestyle="dotted")
+
+# Add labels and a title
+plt.xlabel("Time Since First Purchase")
+plt.ylabel("Odds Ratio")
+plt.title("Odds Ratio vs. Time Since First Purchase")
+
+plt.show()
