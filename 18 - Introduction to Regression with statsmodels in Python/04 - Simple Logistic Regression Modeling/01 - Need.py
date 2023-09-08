@@ -3,8 +3,10 @@
 from statsmodels.formula.api import logit
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Assuming you have your churn data loaded into a DataFrame called 'churn_data'
+# Load the churn dataset
+churn = pd.read_csv('./datasets/churn.csv')
 
 # Create the displot with col parameter to split histograms
 sns.displot(data=churn, x="time_since_last_purchase",
@@ -35,7 +37,7 @@ plt.suptitle(
 plt.show()
 
 # Create a scatter plot with a linear regression trend line
-sns.regplot(data=churn_data, x="time_since_first_purchase",
+sns.regplot(data=churn, x="time_since_first_purchase",
             y="has_churned", color="red", scatter_kws={'s': 10})
 
 # Add labels and a title
