@@ -1,5 +1,6 @@
 # Why you need logistic regression
 
+from statsmodels.formula.api import logit
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -56,3 +57,11 @@ plt.title("Scatter Plot of Has Churned vs. Time Since First Purchase")
 
 # Show the plot
 plt.show()
+
+
+# Fit a logistic regression of churn vs. length of relationship using the churn dataset
+formula = "has_churned ~ time_since_first_purchase"
+mdl_churn_vs_relationship = logit(formula, data=churn).fit()
+
+# Print the parameters of the fitted model
+print(mdl_churn_vs_relationship.params)
