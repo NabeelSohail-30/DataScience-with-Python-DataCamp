@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 spotify_population = pd.read_feather('./dataset/spotify_2000_2020.feather')
+spotify_mysterious_sample = ""
+spotify_mysterious_sample2 = ""
 
 # Create a histogram of the 'acousticness' column with specified bins
 plt.figure(figsize=(8, 6))  # Optional: Set the figure size
