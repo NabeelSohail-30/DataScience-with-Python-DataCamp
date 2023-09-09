@@ -33,7 +33,7 @@ plt.show()
 # Create a histogram of the 'random_numbers' data with specified bins
 plt.figure(figsize=(8, 6))  # Optional: Set the figure size
 bin_edges = np.arange(-2, 13.5, 0.5)  # Specify bin edges with a step of 0.5
-plt.hist(random_numbers, bins=bin_edges, edgecolor='k')
+plt.hist(normals, bins=bin_edges, edgecolor='k')
 plt.xlabel('Value')
 plt.ylabel('Frequency')
 plt.title('Histogram of Normal(5, 2)')
