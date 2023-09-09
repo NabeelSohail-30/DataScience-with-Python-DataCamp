@@ -27,3 +27,15 @@ plt.grid(True)
 
 # Show the histogram
 plt.show()
+
+# Create a histogram of the 'duration_minutes' column with specified bins
+plt.figure(figsize=(8, 6))  # Optional: Set the figure size
+spotify_population['duration_minutes'].hist(
+    bins=range(0, 16, 1), edgecolor='k')
+plt.xlabel('Duration (minutes)')
+plt.ylabel('Frequency')
+plt.title('Duration Distribution in Spotify Population')
+plt.grid(True)
+
+# Show the histogram
+plt.show()
