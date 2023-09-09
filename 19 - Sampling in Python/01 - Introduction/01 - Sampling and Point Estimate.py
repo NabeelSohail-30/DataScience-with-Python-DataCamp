@@ -1,8 +1,8 @@
-# Sample 1000 rows from spotify_population
-spotify_sample = spotify_population.sample(n=1000)
+import pandas as pd
+import numpy as np
 
-# Print the sample
-print(spotify_sample)
+# Load FEATHER File Data
+spotify_population = pd.read_feather('./dataset/spotify_2000_2020.feather')
 
 # Sample 1000 rows from spotify_population
 spotify_sample = spotify_population.sample(n=1000)
@@ -27,9 +27,6 @@ loudness_pop = spotify_population['loudness']
 loudness_samp = loudness_pop.sample(n=100, random_state=np.random.seed(42))
 
 print(loudness_samp)
-
-# Create a pandas Series from the loudness column of spotify_population
-loudness_pop = spotify_population['loudness']
 
 # Sample 100 values of loudness_pop
 loudness_samp = loudness_pop.sample(n=100)
