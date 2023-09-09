@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Assuming you have the Spotify dataset loaded into spotify_population DataFrame
+spotify_population = pd.read_feather('./dataset/spotify_2000_2020.feather')
 
 # Create a histogram of the 'acousticness' column with specified bins
 plt.figure(figsize=(8, 6))  # Optional: Set the figure size
