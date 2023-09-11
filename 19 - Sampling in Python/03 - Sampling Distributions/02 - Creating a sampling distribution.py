@@ -1,5 +1,9 @@
-# Create an empty list
 import matplotlib.pyplot as plt
+import pandas as pd
+
+attrition_pop = pd.read_feather('dataset/attrition.feather')
+
+# Create an empty list
 mean_attritions = []
 # Loop 500 times to create 500 sample means
 for i in range(500):
