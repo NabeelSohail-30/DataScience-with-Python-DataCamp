@@ -1,4 +1,9 @@
 import random
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+attrition_pop = pd.read_feather('attrition.feather')
 
 # Create a list of unique JobRole values
 job_roles_pop = attrition_pop['JobRole'].unique().tolist()

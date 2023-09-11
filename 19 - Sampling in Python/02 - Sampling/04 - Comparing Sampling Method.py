@@ -1,3 +1,10 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import random
+
+attrition_pop = pd.read_feather('attrition.feather')
+
 # Perform simple random sampling to get 0.25 of the population
 attrition_srs = attrition_pop.sample(frac=0.25, random_state=2022)
 

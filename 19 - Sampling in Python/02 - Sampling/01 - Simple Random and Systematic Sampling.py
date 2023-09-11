@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
+
+attrition_pop = pd.read_feather('attrition.feather')
 
 # Set the random seed and sample 70 rows using simple random sampling
 attrition_samp = attrition_pop.sample(n=70, random_state=18900217)

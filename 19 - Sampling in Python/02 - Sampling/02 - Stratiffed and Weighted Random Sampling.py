@@ -1,5 +1,11 @@
 # Calculate the proportion of employees by Education level
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+attrition_pop = pd.read_feather('attrition.feather')
+
+
 education_counts_pop = attrition_pop['Education'].value_counts(normalize=True)
 
 # Print education_counts_pop
