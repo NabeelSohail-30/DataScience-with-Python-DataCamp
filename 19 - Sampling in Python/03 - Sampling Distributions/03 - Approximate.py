@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 import itertools
+import matplotlib.pyplot as plt
+
+attrition_pop = pd.read_feather('dataset/attrition.feather')
 
 # Define the number of dice and sides
 num_dice = 5
@@ -18,6 +21,11 @@ dice = pd.DataFrame(combinations, columns=[
 
 # Print the result
 print(dice)
+
+
+def expand_grid(dictionary):
+    return pd.DataFrame([row for row in itertools.product(*dictionary.values())], columns=dictionary.keys())
+
 
 # Expand a grid representing 5 8-sided dice
 dice = expand_grid(
