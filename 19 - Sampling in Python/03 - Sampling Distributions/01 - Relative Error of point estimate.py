@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+attrition_pop = pd.read_feather('dataset/attrition.feather')
+
 # Set the seed for reproducibility
 np.random.seed(2022)
 
