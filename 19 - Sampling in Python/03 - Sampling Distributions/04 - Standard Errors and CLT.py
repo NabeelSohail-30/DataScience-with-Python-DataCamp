@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+
+attrition_pop = pd.read_feather('dataset/attrition.feather')
 
 # Assuming you have the arrays sampling_distribution_5, sampling_distribution_50, and sampling_distribution_500
 
