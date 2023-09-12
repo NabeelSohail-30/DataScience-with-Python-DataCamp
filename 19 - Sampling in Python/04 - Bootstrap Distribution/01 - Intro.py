@@ -1,6 +1,9 @@
 # Generate 1 bootstrap resample
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+
+spotify_sample = pd.read_feather('./datasets/spotify_2000_2020.feather')
 
 spotify_1_resample = spotify_sample.sample(frac=1, replace=True)
 

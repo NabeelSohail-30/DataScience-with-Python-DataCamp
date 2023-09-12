@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+
+spotify_sample = pd.read_feather('./datasets/spotify_2000_2020.feather')
 
 # Initialize an empty list to store the means
 mean_popularity_2000_samp = []
