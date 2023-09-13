@@ -1,0 +1,29 @@
+# Print the late_shipments dataset
+print(late_shipments)
+
+# Assuming you have a DataFrame named late_shipments
+
+# Calculate the total number of shipments
+total_shipments = len(late_shipments)
+
+# Count the number of late shipments (where "late" column is "Yes")
+late_shipments_count = (late_shipments["late"] == "Yes").sum()
+
+# Calculate the proportion of late shipments
+late_prop_samp = late_shipments_count / total_shipments
+
+# Print the results
+print(late_prop_samp)
+
+# Hypothesize that the proportion is 6%
+late_prop_hyp = 0.06
+
+# Calculate the standard error
+std_error = np.std(late_shipments_boot_distn, ddof=1)
+
+# Find z-score of late_prop_samp
+z_score = (late_prop_samp - late_prop_hyp) / std_error
+
+# Print z_score
+print(z_score)
+
